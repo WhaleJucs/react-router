@@ -5,11 +5,11 @@ import './Home.css'
 
 const Home = () => {
     // 3 - carregamento de dados
-    const url = "http:localhost:3000/products"
+    const url = "http://localhost:3000/products"
     const {data: items, loading, error} = useFetch(url)
 
     return (
-    <div>
+    <div className='Home'>
         <h1>Produtos</h1>
         {error && <p>{error}</p>}
         <ul className="products">
