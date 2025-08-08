@@ -40,7 +40,7 @@ const Home = () => {
                     <li key={item.id}>
                         <h2>{item.name}</h2>
                         <p>R$: {item.price}</p>
-                        <button onClick={() => handleRemove(product.id)}>Excluir</button>
+                        <button onClick={() => handleRemove(item.id)}>Excluir</button>
 
                         {/* 4 - rota dinâmica */}
                         <Link to={`/products/${item.id}`}>Detalhes</Link>
@@ -58,7 +58,7 @@ const Home = () => {
                             name='name'
                             onChange={(e) => setName(e.target.value)} />
                 </label>
-                <label onSubmit={handleSubmit}>
+                <label>
                     Preço:
                     <input type="number"
                             value={price}
@@ -66,8 +66,8 @@ const Home = () => {
                             onChange={(e) => setPrice(e.target.value)} />
                 </label>
 
-                {loading && <input type="submit" disabled value='Aguarde' />}
-                {!loading && <input type="submit" value='Criar' />}
+                {loading && <button type="submit" disabled value='Aguarde'>Aguarde</button>}
+                {!loading && <button type="submit" value='Criar'>Criar</button>}
             </form>
         </div>
     </div>
